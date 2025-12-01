@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Palette, Printer, Scissors, Sparkles, Wand2, Camera, Mic, Star } from 'lucide-react'
+import { Device3D } from './Device3D'
 
 const features = [
   {
@@ -107,30 +108,19 @@ export function ProductShowcase() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-couture-pink-50 via-white to-couture-purple-50 rounded-3xl p-8 shadow-2xl">
-              {/* Device Illustration */}
-              <div className="aspect-square bg-white rounded-2xl shadow-inner flex items-center justify-center">
-                <div className="text-center p-8">
-                  {/* Simplified Device Render */}
-                  <div className="relative inline-block">
-                    <div className="w-64 h-72 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl shadow-xl mx-auto relative overflow-hidden">
-                      {/* Screen */}
-                      <div className="absolute top-6 left-6 right-6 h-32 bg-gradient-to-br from-couture-pink-100 to-couture-purple-100 rounded-xl flex items-center justify-center">
-                        <Sparkles className="w-12 h-12 text-couture-purple-400" />
-                      </div>
-                      {/* Printer Slot */}
-                      <div className="absolute bottom-20 left-6 right-6 h-2 bg-gray-400 rounded-full" />
-                      {/* Control Button */}
-                      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-couture-pink-400 to-couture-pink-500 shadow-lg" />
-                    </div>
-                    {/* Floating fabric coming out */}
-                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-16 bg-gradient-to-r from-couture-pink-200 via-couture-purple-200 to-couture-gold-200 rounded-lg shadow-md animate-float" />
-                  </div>
-                </div>
+            <div className="relative bg-gradient-to-br from-couture-pink-50 via-white to-couture-purple-50 rounded-3xl shadow-2xl overflow-hidden border border-white/50">
+              <div className="absolute top-4 left-4 z-10 bg-white/80 backdrop-blur px-3 py-1 rounded-full">
+                 <span className="text-xs font-bold text-couture-purple-600 flex items-center gap-1">
+                   <Sparkles className="w-3 h-3" />
+                   Interactive 3D
+                 </span>
               </div>
+              
+              {/* 3D Device Component */}
+              <Device3D />
 
               {/* Dimension Labels */}
-              <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-lg shadow-lg px-3 py-2">
+              <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-lg shadow-lg px-3 py-2 z-10 hidden md:block">
                 <span className="text-xs font-mono text-gray-600">12" × 10" × 8"</span>
               </div>
             </div>
