@@ -36,21 +36,18 @@ export async function POST(request: NextRequest) {
 
     const prompt = `A stunning photorealistic ${style} dress design based on this sketch, high fashion runway garment, luxurious fabric with realistic textures and draping, silk satin velvet material, elegant beading and embroidery details, professional fashion photography, soft studio lighting, clean white background, magazine quality, 8k resolution, maintain the silhouette and design from the sketch`
 
-    // Use SDXL with ControlNet for sketch-to-image transformation
-    // This properly uses the sketch as input to guide the generation
+    // Use SDXL img2img for better sketch transformation
     const prediction = await replicate.predictions.create({
-      version: "435061a1b5a4c1e26740464bf786efdfa9cb3a3ac488595a2de23e143fdb0117",
+      version: "7762fd07cf82c948538e41f63f77d685e02b063e37e496e96eefd46c929f9bdc",
       input: {
         image: imageDataUri,
         prompt: prompt,
+        negative_prompt: "ugly, blurry, low quality, distorted, amateur, poorly drawn, sketch, drawing, cartoon",
         num_outputs: 1,
-        image_resolution: "768",
-        preprocessor_resolution: "768",
-        num_inference_steps: 30,
-        guidance_scale: 9,
-        low_threshold: 100,
-        high_threshold: 200,
-        negative_prompt: "ugly, blurry, low quality, distorted, amateur, poorly drawn",
+        num_inference_steps: 25,
+        guidance_scale: 7.5,
+        prompt_strength: 0.8,
+        scheduler: "K_EULER",
       }
     })
 
