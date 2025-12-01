@@ -34,20 +34,24 @@ export async function POST(request: NextRequest) {
     const mimeType = imageFile.type || 'image/png'
     const imageDataUri = `data:${mimeType};base64,${base64Image}`
 
-    const prompt = `A stunning photorealistic ${style} dress design based on this sketch, high fashion runway garment, luxurious fabric with realistic textures and draping, silk satin velvet material, elegant beading and embroidery details, professional fashion photography, soft studio lighting, clean white background, magazine quality, 8k resolution, maintain the silhouette and design from the sketch`
+    const prompt = `Transform this child's dress sketch into a photorealistic ${style} garment. 
+IMPORTANT: Keep the EXACT same colors, patterns, stripes, and design elements from the sketch.
+The dress should have the same silhouette, color scheme, and decorative details as drawn.
+Make it look like a real luxurious fabric dress with the same rainbow/colorful pattern if present.
+Professional fashion photography, soft studio lighting, clean white background, magazine quality.`
 
-    // Use SDXL img2img for better sketch transformation
+    // Use Flux Dev for better sketch-to-image with image prompting
     const prediction = await replicate.predictions.create({
-      version: "7762fd07cf82c948538e41f63f77d685e02b063e37e496e96eefd46c929f9bdc",
+      version: "a1e19c0a85a9a8998dc0590a7b3781dd4f0835da2f82d5de9b22c80680192bde",
       input: {
-        image: imageDataUri,
         prompt: prompt,
-        negative_prompt: "ugly, blurry, low quality, distorted, amateur, poorly drawn, sketch, drawing, cartoon",
+        image: imageDataUri,
         num_outputs: 1,
-        num_inference_steps: 25,
-        guidance_scale: 7.5,
-        prompt_strength: 0.8,
-        scheduler: "K_EULER",
+        guidance: 3.5,
+        num_inference_steps: 28,
+        output_format: "webp",
+        output_quality: 90,
+        prompt_strength: 0.55,
       }
     })
 
