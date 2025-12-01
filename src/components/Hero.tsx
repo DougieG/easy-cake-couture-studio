@@ -110,8 +110,8 @@ export function Hero() {
                   <div className="aspect-square bg-white rounded-xl shadow-inner flex items-center justify-center overflow-hidden">
                     {/* Before/After Slider */}
                     <BeforeAfterSlider 
-                      beforeImage="https://images.unsplash.com/photo-1589384267710-7a170981ca78?q=80&w=400&auto=format&fit=crop"
-                      afterImage="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600&auto=format&fit=crop"
+                      beforeImage="/images/hero-sketch.jpg"
+                      afterImage="/images/hero-dress.jpg"
                       className="w-full h-full rounded-xl"
                     />
                   </div>
