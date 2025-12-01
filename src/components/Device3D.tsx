@@ -17,12 +17,31 @@ import * as THREE from 'three'
 
 function PrinterModel(props: any) {
   const meshRef = useRef<THREE.Group>(null)
+  const fabricRef = useRef<THREE.Mesh>(null)
+  const fabricTexture = useFabricTexture()
   
   // Animation
   useFrame((state) => {
     if (meshRef.current) {
       // Gentle floating rotation
       meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.3) * 0.1
+    }
+    
+    if (fabricRef.current) {
+      // Fabric extrusion animation
+      // Move from z=0.5 to z=2.5 over time, then reset
+      const time = state.clock.elapsedTime * 0.5
+      const progress = time % 1
+      // Smooth step for restart
+      const zPos = 0.5 + (progress * 2.5)
+      fabricRef.current.position.z = zPos
+      
+      // Scale up slightly as it comes out
+      const scale = Math.min(1, progress * 5)
+      fabricRef.current.scale.set(1, 1, scale)
+      
+      // Waving motion
+      fabricRef.current.rotation.x = -0.5 + Math.sin(time * 5 + zPos) * 0.05
     }
   })
 
@@ -46,11 +65,15 @@ function PrinterModel(props: any) {
         </RoundedBox>
         
         {/* Ejecting Fabric */}
-        <mesh position={[0, -1, 0.5]} rotation={[-0.5, 0, 0]}>
+        <mesh 
+          ref={fabricRef}
+          position={[0, -1, 0.5]} 
+          rotation={[-0.5, 0, 0]}
+        >
           <planeGeometry args={[2, 2.5, 10, 10]} />
           <meshStandardMaterial 
             side={THREE.DoubleSide}
-            map={useFabricTexture()}
+            map={fabricTexture}
           />
         </mesh>
       </group>
