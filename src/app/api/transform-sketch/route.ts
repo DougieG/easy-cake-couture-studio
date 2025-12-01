@@ -18,9 +18,12 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    if (!process.env.REPLICATE_API_TOKEN) {
+    const token = process.env.REPLICATE_API_TOKEN
+    console.log('Token exists:', !!token, 'Length:', token?.length || 0)
+    
+    if (!token) {
       return NextResponse.json(
-        { error: 'Replicate API token not configured' },
+        { error: 'Replicate API token not configured', env: Object.keys(process.env).filter(k => k.includes('REPLICATE')) },
         { status: 500 }
       )
     }
