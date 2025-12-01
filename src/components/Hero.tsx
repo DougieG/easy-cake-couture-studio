@@ -3,6 +3,7 @@
 import { ArrowRight, Play, Sparkles, Star, Zap } from 'lucide-react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { BeforeAfterSlider } from './BeforeAfterSlider'
 
 export function Hero() {
   return (
@@ -107,34 +108,12 @@ export function Hero() {
                 {/* Device Top - Screen Area */}
                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-6 mb-6">
                   <div className="aspect-square bg-white rounded-xl shadow-inner flex items-center justify-center overflow-hidden">
-                    {/* Animated Pattern Preview */}
-                    <div className="w-full h-full bg-gradient-to-br from-couture-pink-50 to-couture-purple-50 flex items-center justify-center">
-                      <div className="relative">
-                        {/* Dress Pattern Silhouette */}
-                        <svg
-                          viewBox="0 0 100 120"
-                          className="w-32 h-40"
-                        >
-                          <defs>
-                            <linearGradient id="dressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor="#f9a8d4" />
-                              <stop offset="50%" stopColor="#c084fc" />
-                              <stop offset="100%" stopColor="#fbbf24" />
-                            </linearGradient>
-                          </defs>
-                          {/* Simple dress silhouette */}
-                          <path
-                            d="M50 10 L35 30 L20 30 L15 35 L25 40 L20 110 L80 110 L75 40 L85 35 L80 30 L65 30 Z"
-                            fill="url(#dressGradient)"
-                            className="animate-pulse-glow"
-                          />
-                          {/* Neckline */}
-                          <ellipse cx="50" cy="15" rx="8" ry="5" fill="#fff" fillOpacity="0.5" />
-                        </svg>
-                        {/* Sparkle overlay */}
-                        <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-couture-gold-400 animate-sparkle" />
-                      </div>
-                    </div>
+                    {/* Before/After Slider */}
+                    <BeforeAfterSlider 
+                      beforeImage="https://images.unsplash.com/photo-1605289355680-e6f7e89855bc?q=80&w=400&auto=format&fit=crop"
+                      afterImage="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=600&auto=format&fit=crop"
+                      className="w-full h-full rounded-xl"
+                    />
                   </div>
                   <div className="mt-4 flex justify-center space-x-2">
                     <div className="w-3 h-3 rounded-full bg-couture-pink-400" />

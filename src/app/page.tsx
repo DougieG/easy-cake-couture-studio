@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/Hero'
+import { MagicDemo } from '@/components/MagicDemo'
 import { ProductShowcase } from '@/components/ProductShowcase'
 import { Technology } from '@/components/Technology'
 import { Roadmap } from '@/components/Roadmap'
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="relative">
       <Navigation />
       <Hero />
+      <MagicDemo />
       <ProductShowcase />
       <Technology />
       <Roadmap />
