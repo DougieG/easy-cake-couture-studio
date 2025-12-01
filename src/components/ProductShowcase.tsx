@@ -83,12 +83,24 @@ export function ProductShowcase() {
               </div>
 
               {/* Card */}
-              <div className={`${feature.bgColor} rounded-3xl p-8 h-full transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2`}>
+              <div className={`${feature.bgColor} rounded-3xl p-8 h-full transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2 overflow-hidden`}>
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 shadow-lg`}>
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-600 mb-4">{feature.description}</p>
+                
+                {/* Contextual Image for First Step */}
+                {index === 0 && (
+                  <div className="mt-4 -mx-8 -mb-8 h-48 overflow-hidden relative">
+                     <img 
+                      src="/images/Drawing2Render.jpeg" 
+                      alt="Sketch process" 
+                      className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-couture-pink-50 to-transparent" />
+                  </div>
+                )}
               </div>
 
               {/* Connector Line */}
@@ -98,6 +110,28 @@ export function ProductShowcase() {
             </motion.div>
           ))}
         </div>
+
+        {/* Lifestyle Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mb-24 rounded-[2.5rem] overflow-hidden relative aspect-[21/9] shadow-2xl group"
+        >
+          <img 
+            src="/images/GirlPlaying.jpeg" 
+            alt="Girl designing with Easy Cake" 
+            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent flex flex-col justify-center p-12 md:p-24 text-white">
+            <h3 className="text-3xl md:text-5xl font-bold mb-4 max-w-xl leading-tight">
+              Designed for the Next Generation of Creators
+            </h3>
+            <p className="text-lg md:text-xl opacity-90 max-w-lg">
+              Empower your child with the tools to express their unique style and build real-world STEM skills through fashion.
+            </p>
+          </div>
+        </motion.div>
 
         {/* Product Visual Section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">

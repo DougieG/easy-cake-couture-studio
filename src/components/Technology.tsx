@@ -117,6 +117,17 @@ export function Technology() {
                     <p className="text-sm text-gray-600">{item.description}</p>
                   </div>
                 ))}
+                
+                {/* App Interface Visual for Software Category */}
+                {category.category === 'Software' && (
+                  <div className="mt-6 rounded-xl overflow-hidden shadow-md">
+                    <img 
+                      src="/images/interface.jpeg" 
+                      alt="App Interface" 
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
