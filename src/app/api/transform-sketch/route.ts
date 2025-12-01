@@ -34,11 +34,24 @@ export async function POST(request: NextRequest) {
     const mimeType = imageFile.type || 'image/png'
     const imageDataUri = `data:${mimeType};base64,${base64Image}`
 
-    const prompt = `Transform this child's dress sketch into a stunning photorealistic ${style} garment, masterpiece quality.
+    // Style-specific prompts for dramatically different outputs
+    const styleKey = style.toLowerCase()
+    let styleDescription = ''
+    
+    if (styleKey.includes('haute') || styleKey.includes('couture')) {
+      styleDescription = 'ultra luxurious Paris Fashion Week haute couture gown, hand-sewn Swarovski crystals and intricate beading, dramatic sculptural silhouette, silk organza and duchess satin, runway model wearing it, editorial Vogue cover photography, Alexander McQueen inspired'
+    } else if (styleKey.includes('red') || styleKey.includes('carpet')) {
+      styleDescription = 'glamorous Hollywood red carpet celebrity gown, stunning Oscar-winning dress, thousands of sparkling sequins and precious gems, dramatic flowing train, A-list movie star elegance, Met Gala worthy, paparazzi camera flashes, celebrity premiere photography'
+    } else if (styleKey.includes('fairy') || styleKey.includes('tale') || styleKey.includes('princess')) {
+      styleDescription = 'magical enchanted Disney princess ball gown, fairy tale dream dress, layers of sparkling tulle with hidden glitter, delicate lace and ribbons, soft pastel accents, fantasy castle ballroom background, golden hour dreamy soft lighting, storybook illustration come to life'
+    } else {
+      styleDescription = 'beautiful elegant designer dress, high fashion quality, luxurious fabrics and details, professional fashion photography'
+    }
+
+    const prompt = `Transform this child's dress sketch into: ${styleDescription}.
 CRITICAL: Preserve the EXACT colors, patterns, stripes, shapes and design elements from the original sketch.
-Maintain the same silhouette, color palette (including any rainbow, multicolor, or specific hues), and all decorative details exactly as drawn.
-Render as a real luxurious haute couture dress with silk, satin, or velvet fabric textures.
-Ultra high-end fashion photography, perfect studio lighting, pure white seamless background, Vogue magazine cover quality, 8K detail.`
+Keep the same color palette (rainbow, multicolor, or specific hues as drawn) but render in the ${style} aesthetic.
+Ultra high-end fashion photography, perfect studio lighting, pure white seamless background, 8K masterpiece quality.`
 
     // Use SDXL img2img with version ID - MAX QUALITY settings
     const prediction = await replicate.predictions.create({
