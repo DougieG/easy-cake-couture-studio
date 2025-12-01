@@ -34,13 +34,13 @@ export async function POST(request: NextRequest) {
     const mimeType = imageFile.type || 'image/png'
     const imageDataUri = `data:${mimeType};base64,${base64Image}`
 
-    const prompt = `Transform this child's dress sketch into a photorealistic ${style} garment. 
-IMPORTANT: Keep the EXACT same colors, patterns, stripes, and design elements from the sketch.
-The dress should have the same silhouette, color scheme, and decorative details as drawn.
-Make it look like a real luxurious fabric dress with the same rainbow/colorful pattern if present.
-Professional fashion photography, soft studio lighting, clean white background, magazine quality.`
+    const prompt = `Transform this child's dress sketch into a stunning photorealistic ${style} garment, masterpiece quality.
+CRITICAL: Preserve the EXACT colors, patterns, stripes, shapes and design elements from the original sketch.
+Maintain the same silhouette, color palette (including any rainbow, multicolor, or specific hues), and all decorative details exactly as drawn.
+Render as a real luxurious haute couture dress with silk, satin, or velvet fabric textures.
+Ultra high-end fashion photography, perfect studio lighting, pure white seamless background, Vogue magazine cover quality, 8K detail.`
 
-    // Use SDXL img2img with version ID
+    // Use SDXL img2img with version ID - MAX QUALITY settings
     const prediction = await replicate.predictions.create({
       version: "39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
       input: {
@@ -48,12 +48,14 @@ Professional fashion photography, soft studio lighting, clean white background, 
         image: imageDataUri,
         num_outputs: 1,
         scheduler: "K_EULER",
-        num_inference_steps: 30,
-        guidance_scale: 7.5,
-        prompt_strength: 0.6,
-        negative_prompt: "ugly, blurry, low quality, distorted, sketch lines visible, crayon texture, childish, amateur",
+        num_inference_steps: 50,
+        guidance_scale: 8.5,
+        prompt_strength: 0.55,
+        negative_prompt: "ugly, blurry, low quality, distorted, sketch lines, crayon, childish, amateur, watermark, text, logo, bad anatomy, deformed",
         refine: "expert_ensemble_refiner",
-        high_noise_frac: 0.8,
+        high_noise_frac: 0.85,
+        width: 1024,
+        height: 1024,
       }
     })
 
