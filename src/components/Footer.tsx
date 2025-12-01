@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Sparkles, Mail, MapPin, Phone, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react'
+import { Mail, MapPin, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react'
+import { Logo } from './Logo'
 
 const footerLinks = {
   product: [
@@ -45,13 +46,13 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           {/* Brand Column */}
           <div className="col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-couture-pink-400 to-couture-purple-500 flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
+            <Link href="/" className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-couture-pink-900 to-couture-purple-900 flex items-center justify-center border border-gray-700 p-2">
+                <Logo className="w-full h-full" />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white">Easy Cake</span>
-                <span className="text-xs font-medium text-gray-400 -mt-1">Couture Studio</span>
+                <span className="text-xl font-display font-bold text-white">Easy Cake</span>
+                <span className="text-xs font-body font-medium text-gray-400 -mt-1 uppercase tracking-wide">Couture Studio</span>
               </div>
             </Link>
             <p className="text-gray-400 mb-6 max-w-xs">

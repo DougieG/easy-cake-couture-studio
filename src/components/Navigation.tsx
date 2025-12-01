@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Logo } from './Logo'
 
 const navLinks = [
   { href: '#product', label: 'Product' },
@@ -38,16 +39,16 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-couture-pink-400 to-couture-purple-500 flex items-center justify-center transform group-hover:rotate-12 transition-transform">
-                <Sparkles className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-couture-pink-100 to-couture-purple-100 flex items-center justify-center transform group-hover:rotate-6 transition-transform shadow-sm border-2 border-white">
+                <Logo className="w-8 h-8" />
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-couture-gold-400 rounded-full animate-pulse" />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-couture-gold-400 rounded-full animate-pulse ring-2 ring-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold gradient-text">Easy Cake</span>
-              <span className="text-xs font-medium text-couture-purple-600 -mt-1">Couture Studio</span>
+              <span className="text-xl font-display font-bold gradient-text tracking-tight">Easy Cake</span>
+              <span className="text-xs font-body font-bold text-couture-purple-600 -mt-1 tracking-wide uppercase">Couture Studio</span>
             </div>
           </Link>
 
@@ -57,13 +58,13 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-couture-pink-500 font-medium transition-colors relative group"
+                className="text-gray-700 hover:text-couture-pink-500 font-body font-medium transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-couture-pink-500 to-couture-purple-500 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
-            <Link href="#contact" className="btn-primary text-sm py-2 px-6">
+            <Link href="#contact" className="btn-primary text-sm py-2 px-6 font-body font-bold shadow-couture-pink-200/50">
               Get Early Access
             </Link>
           </div>

@@ -1,8 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Playfair_Display, Quicksand } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-display' })
+const playfair = Playfair_Display({ 
+  subsets: ['latin'], 
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const quicksand = Quicksand({ 
+  subsets: ['latin'], 
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Easy Cake Couture Studio | AI-Powered Fashion Design for Kids',
@@ -28,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${playfair.variable} ${quicksand.variable}`}>
       <body className="font-body bg-white text-gray-900">
         {children}
       </body>

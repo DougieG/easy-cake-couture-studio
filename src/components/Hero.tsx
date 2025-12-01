@@ -38,30 +38,30 @@ export function Hero() {
               className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-md mb-6"
             >
               <Zap className="w-4 h-4 text-couture-gold-500" />
-              <span className="text-sm font-medium text-gray-700">World&apos;s First AI Fashion Studio for Kids</span>
+              <span className="text-sm font-body font-bold text-gray-700 uppercase tracking-wide">World&apos;s First AI Fashion Studio for Kids</span>
             </motion.div>
 
             {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 tracking-tight">
               <span className="text-gray-900">Turn</span>{' '}
-              <span className="gradient-text">Imagination</span>
+              <span className="gradient-text italic">Imagination</span>
               <br />
               <span className="text-gray-900">Into</span>{' '}
-              <span className="gradient-text">Fashion</span>
+              <span className="gradient-text italic">Fashion</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-xl md:text-2xl font-body text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               The mini fabric printer that lets kids design, print, and assemble real doll clothes. From sketch to runway in minutes.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link href="#contact" className="btn-primary group">
+              <Link href="#contact" className="btn-primary group font-body font-bold text-lg shadow-couture-pink-200/50">
                 <span>Reserve Your Studio</span>
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button className="btn-secondary group">
+              <button className="btn-secondary group font-body font-bold text-lg">
                 <Play className="mr-2 w-5 h-5 text-couture-purple-500" />
                 <span>Watch the Magic</span>
               </button>

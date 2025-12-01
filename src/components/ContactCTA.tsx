@@ -35,10 +35,10 @@ export function ContactCTA() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">
             Be Part of the Fashion Revolution
           </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl font-body text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
             Join our waitlist for early access, exclusive updates, and the chance to shape the future of creative play.
           </p>
 
@@ -51,12 +51,12 @@ export function ContactCTA() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-6 py-4 bg-white rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-couture-pink-300"
+                className="flex-1 px-6 py-4 bg-white rounded-xl font-body text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-couture-pink-300"
               />
               <select
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="px-4 py-4 bg-white rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-couture-pink-300"
+                className="px-4 py-4 bg-white rounded-xl font-body text-gray-700 focus:outline-none focus:ring-2 focus:ring-couture-pink-300"
               >
                 <option value="">I am a...</option>
                 <option value="parent">Parent</option>
@@ -69,7 +69,7 @@ export function ContactCTA() {
               <button
                 type="submit"
                 disabled={submitted}
-                className="px-8 py-4 bg-gray-900 text-white font-semibold rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50"
+                className="px-8 py-4 bg-gray-900 text-white font-body font-bold rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 shadow-lg"
               >
                 {submitted ? (
                   <>
@@ -110,8 +110,8 @@ export function ContactCTA() {
               { value: '$2.5M', label: 'Seed funding goal' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-white">{stat.value}</p>
-                <p className="text-white/70 text-sm mt-1">{stat.label}</p>
+                <p className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">{stat.value}</p>
+                <p className="text-white/70 font-body text-sm mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
