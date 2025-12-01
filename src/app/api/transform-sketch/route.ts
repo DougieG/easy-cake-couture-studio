@@ -40,9 +40,9 @@ The dress should have the same silhouette, color scheme, and decorative details 
 Make it look like a real luxurious fabric dress with the same rainbow/colorful pattern if present.
 Professional fashion photography, soft studio lighting, clean white background, magazine quality.`
 
-    // Use stability-ai SDXL for reliable img2img
+    // Use SDXL img2img with version ID
     const prediction = await replicate.predictions.create({
-      model: "stability-ai/sdxl",
+      version: "39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b",
       input: {
         prompt: prompt,
         image: imageDataUri,
