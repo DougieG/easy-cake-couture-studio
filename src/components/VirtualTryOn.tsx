@@ -35,83 +35,34 @@ export function VirtualTryOn() {
             viewport={{ once: true }}
             className="relative mx-auto w-full max-w-2xl"
           >
-            <div className="relative aspect-[16/9] bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-white ring-1 ring-gray-100">
-              
-              {/* Split Screen Container */}
-              <div className="absolute inset-0 flex">
-                {/* User Side */}
-                <div className="w-1/2 relative border-r border-white/20 overflow-hidden bg-gray-100">
-                  <img 
-                    src="/images/userRunwayMock.jpeg" 
-                    alt="Girl Model"
-                    className="w-full h-full object-cover object-top"
-                  />
-                  <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                    <span className="text-white font-bold flex items-center">
-                      <Camera className="w-4 h-4 mr-2" /> You
-                    </span>
-                  </div>
-                  
-                  {/* Augmented Reality Overlay Dress (Simplified) */}
-                  {isTwinning && (
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.8 }}
-                      className="absolute inset-0 mix-blend-overlay bg-gradient-to-br from-couture-pink-500 to-couture-purple-500"
-                    />
-                  )}
+            <div className="relative aspect-[4/3] bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-white ring-1 ring-gray-100 group">
+              {/* Main Image */}
+              <img 
+                src="/images/VirtualTryon.jpeg" 
+                alt="Virtual Try-On Experience" 
+                className="w-full h-full object-contain bg-gray-50"
+              />
+
+              {/* Overlay UI */}
+              <div className="absolute inset-0 pointer-events-none">
+                {/* Labels */}
+                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-lg flex items-center space-x-2">
+                  <Camera className="w-4 h-4 text-couture-pink-500" />
+                  <span className="text-sm font-bold text-gray-800">You</span>
+                </div>
+                <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-lg flex items-center space-x-2">
+                  <Sparkles className="w-4 h-4 text-couture-purple-500" />
+                  <span className="text-sm font-bold text-gray-800">Your Doll</span>
                 </div>
 
-                {/* Doll Side */}
-                <div className="w-1/2 relative overflow-hidden bg-gray-100">
-                  <img 
-                    src="/images/BarbieAR.jpeg" 
-                    alt="Doll Model"
-                    className="w-full h-full object-cover object-top"
-                  />
-                  <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-                    <span className="text-white font-bold flex items-center">
-                      <Sparkles className="w-4 h-4 mr-2" /> Your Doll
-                    </span>
+                {/* Center Interaction Hint */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-black/60 text-white px-6 py-3 rounded-full backdrop-blur-md font-bold flex items-center">
+                    <RefreshCw className="w-5 h-5 mr-2" />
+                    Syncing Styles...
                   </div>
-
-                  {/* Augmented Reality Overlay Dress (Simplified) */}
-                  {isTwinning && (
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.8 }}
-                      className="absolute inset-0 mix-blend-overlay bg-gradient-to-br from-couture-pink-500 to-couture-purple-500"
-                    />
-                  )}
                 </div>
               </div>
-
-              {/* Center Interaction Button */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <button
-                  onClick={() => setIsTwinning(!isTwinning)}
-                  className="btn-primary rounded-full w-16 h-16 flex items-center justify-center shadow-[0_0_20px_rgba(236,72,153,0.5)] border-4 border-white hover:scale-110 active:scale-95 transition-all"
-                >
-                  {isTwinning ? (
-                    <RefreshCw className="w-6 h-6" />
-                  ) : (
-                    <Shirt className="w-6 h-6" />
-                  )}
-                </button>
-              </div>
-
-              {/* Floating Labels */}
-              {isTwinning && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="absolute top-6 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-2 rounded-full shadow-xl border border-couture-pink-200"
-                >
-                  <span className="gradient-text font-bold flex items-center">
-                    ✨ IT'S A MATCH! ✨
-                  </span>
-                </motion.div>
-              )}
             </div>
           </motion.div>
 
