@@ -52,14 +52,15 @@ export function BeforeAfterSlider({ beforeImage, afterImage, className = '' }: B
       className={`relative w-full h-full select-none overflow-hidden cursor-ew-resize ${className}`}
     >
       {/* Before Image (Background) */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-white">
         <img 
           src={beforeImage} 
           alt="Before" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-90 mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-500"
         />
-        <div className="absolute top-4 left-4 bg-black/50 text-white px-2 py-1 rounded text-xs font-bold backdrop-blur-sm">
-          SKETCH
+        <div className="absolute inset-0 bg-[#f0f0f0] opacity-20" style={{ backgroundImage: 'radial-gradient(#ccc 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+        <div className="absolute top-4 left-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full text-xs font-bold shadow-sm border border-gray-200 flex items-center">
+          ✏️ YOUR SKETCH
         </div>
       </div>
 
@@ -73,8 +74,8 @@ export function BeforeAfterSlider({ beforeImage, afterImage, className = '' }: B
           alt="After" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-4 right-4 bg-couture-pink-500/80 text-white px-2 py-1 rounded text-xs font-bold backdrop-blur-sm">
-          COUTURE
+        <div className="absolute top-4 right-4 bg-gradient-to-r from-couture-pink-500 to-couture-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center">
+          ✨ REALITY
         </div>
       </div>
 
