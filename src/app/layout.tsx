@@ -32,8 +32,6 @@ export const metadata: Metadata = {
   },
 }
 
-import { MagicCursor } from '@/components/MagicCursor'
-
 export default function RootLayout({
   children,
 }: {
@@ -41,8 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${quicksand.variable}`}>
-      <body className="font-body bg-white text-gray-900 cursor-none">
-        <MagicCursor />
+      <body className="font-body bg-white text-gray-900">
         {children}
       </body>
     </html>

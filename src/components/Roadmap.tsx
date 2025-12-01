@@ -176,6 +176,28 @@ export function Roadmap() {
           </div>
         </div>
 
+        {/* Visual Roadmap Evolution */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-2">
+             <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl">
+              <img 
+                src="/images/v1v2v3.jpeg" 
+                alt="Product Evolution: V1, V2, and V3" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                <h3 className="text-2xl font-bold mb-2">Hardware Evolution</h3>
+                <p className="opacity-90">From single-function printing to a complete textile fabrication lab.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Boy Versions Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
