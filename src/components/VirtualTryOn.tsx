@@ -42,7 +42,7 @@ export function VirtualTryOn() {
                 {/* User Side */}
                 <div className="w-1/2 relative border-r border-white/20 overflow-hidden group">
                   <img 
-                    src="https://images.unsplash.com/photo-1515463138280-67d1dcbf3175?q=80&w=800&auto=format&fit=crop" 
+                    src="/images/userRunwayMock.jpeg" 
                     alt="Girl Model"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -65,7 +65,7 @@ export function VirtualTryOn() {
                 {/* Doll Side */}
                 <div className="w-1/2 relative overflow-hidden group">
                   <img 
-                    src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?q=80&w=800&auto=format&fit=crop" 
+                    src="/images/BarbieAR.jpeg" 
                     alt="Doll Model"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />

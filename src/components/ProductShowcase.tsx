@@ -167,6 +167,54 @@ export function ProductShowcase() {
             </div>
           </motion.div>
         </div>
+
+        {/* Visual Gallery */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24"
+        >
+          <h3 className="text-2xl font-bold text-center mb-12">The Complete Studio Experience</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/Packaging.jpeg" 
+                alt="Premium Packaging" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="font-bold text-lg">Unboxing Magic</p>
+                <p className="text-sm opacity-90">Premium sustainable packaging</p>
+              </div>
+            </div>
+            <div className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/EcoSystem.jpeg" 
+                alt="Full Ecosystem" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="font-bold text-lg">Connected Play</p>
+                <p className="text-sm opacity-90">App + Printer + Dolls</p>
+              </div>
+            </div>
+            <div className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/MockPrinter.jpeg" 
+                alt="Studio Setup" 
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="font-bold text-lg">Design Station</p>
+                <p className="text-sm opacity-90">Fits perfectly on any desk</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

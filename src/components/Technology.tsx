@@ -122,21 +122,52 @@ export function Technology() {
           ))}
         </div>
 
-        {/* Architecture Diagram */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gray-900 rounded-3xl p-8 md:p-12 text-white mb-20"
-        >
-          <h3 className="text-2xl font-bold mb-6 flex items-center">
-            <Database className="w-6 h-6 mr-3 text-couture-pink-400" />
-            System Architecture
-          </h3>
-          <pre className="text-xs md:text-sm font-mono text-couture-mint-300 overflow-x-auto whitespace-pre">
-            {architectureDiagram}
-          </pre>
-        </motion.div>
+        {/* Visual Tech Deep Dive */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-3xl p-2 shadow-xl overflow-hidden group"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <img 
+                src="/images/DeviceExplo.jpeg" 
+                alt="Device Exploded View" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                <div>
+                  <span className="px-3 py-1 bg-couture-purple-500 text-white text-xs font-bold rounded-full mb-2 inline-block">HARDWARE</span>
+                  <h3 className="text-white text-xl font-bold">Precision Engineering</h3>
+                  <p className="text-gray-200 text-sm mt-1">Exploded view of our custom print engine and safety mechanisms.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-3xl p-2 shadow-xl overflow-hidden group"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <img 
+                src="/images/ManufacturingBreakDown.jpeg" 
+                alt="Manufacturing Breakdown" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                <div>
+                  <span className="px-3 py-1 bg-couture-pink-500 text-white text-xs font-bold rounded-full mb-2 inline-block">PROCESS</span>
+                  <h3 className="text-white text-xl font-bold">Sustainable Manufacturing</h3>
+                  <p className="text-gray-200 text-sm mt-1">Eco-friendly materials and simplified assembly process.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Key Technology Features */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
