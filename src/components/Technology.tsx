@@ -124,7 +124,7 @@ export function Technology() {
                     <img 
                       src="/images/interface.jpeg" 
                       alt="App Interface" 
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-auto object-contain bg-gray-50"
                     />
                   </div>
                 )}
@@ -141,13 +141,13 @@ export function Technology() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl p-2 shadow-xl overflow-hidden group"
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-900">
               <img 
                 src="/images/DeviceExplo.jpeg" 
                 alt="Device Exploded View" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                 <div>
                   <span className="px-3 py-1 bg-couture-purple-500 text-white text-xs font-bold rounded-full mb-2 inline-block">HARDWARE</span>
                   <h3 className="text-white text-xl font-bold">Precision Engineering</h3>
@@ -163,13 +163,13 @@ export function Technology() {
             viewport={{ once: true }}
             className="bg-white rounded-3xl p-2 shadow-xl overflow-hidden group"
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-900">
               <img 
                 src="/images/ManufacturingBreakDown.jpeg" 
                 alt="Manufacturing Breakdown" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                 <div>
                   <span className="px-3 py-1 bg-couture-pink-500 text-white text-xs font-bold rounded-full mb-2 inline-block">PROCESS</span>
                   <h3 className="text-white text-xl font-bold">Sustainable Manufacturing</h3>

@@ -184,11 +184,11 @@ export function Roadmap() {
           className="mb-24"
         >
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden p-2">
-             <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl">
+             <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl bg-gray-50">
               <img 
                 src="/images/v1v2v3.jpeg" 
                 alt="Product Evolution: V1, V2, and V3" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain"
               />
               <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
                 <h3 className="text-2xl font-bold mb-2">Hardware Evolution</h3>

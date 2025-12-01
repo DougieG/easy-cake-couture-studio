@@ -40,11 +40,11 @@ export function VirtualTryOn() {
               {/* Split Screen Container */}
               <div className="absolute inset-0 flex">
                 {/* User Side */}
-                <div className="w-1/2 relative border-r border-white/20 overflow-hidden group">
+                <div className="w-1/2 relative border-r border-white/20 overflow-hidden bg-gray-100">
                   <img 
                     src="/images/userRunwayMock.jpeg" 
                     alt="Girl Model"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
                     <span className="text-white font-bold flex items-center">
@@ -63,11 +63,11 @@ export function VirtualTryOn() {
                 </div>
 
                 {/* Doll Side */}
-                <div className="w-1/2 relative overflow-hidden group">
+                <div className="w-1/2 relative overflow-hidden bg-gray-100">
                   <img 
                     src="/images/BarbieAR.jpeg" 
                     alt="Doll Model"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
                     <span className="text-white font-bold flex items-center">

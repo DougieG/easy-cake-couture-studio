@@ -96,7 +96,7 @@ export function ProductShowcase() {
                      <img 
                       src="/images/Drawing2Render.jpeg" 
                       alt="Sketch process" 
-                      className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover opacity-90"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-couture-pink-50 to-transparent" />
                   </div>
@@ -116,12 +116,12 @@ export function ProductShowcase() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mb-24 rounded-[2.5rem] overflow-hidden relative aspect-[21/9] shadow-2xl group"
+          className="mb-24 rounded-[2.5rem] overflow-hidden relative shadow-2xl group bg-gray-100"
         >
           <img 
             src="/images/GirlPlaying.jpeg" 
             alt="Girl designing with Easy Cake" 
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            className="w-full h-auto min-h-[400px] object-contain md:object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent flex flex-col justify-center p-12 md:p-24 text-white">
             <h3 className="text-3xl md:text-5xl font-bold mb-4 max-w-xl leading-tight">
@@ -211,38 +211,41 @@ export function ProductShowcase() {
         >
           <h3 className="text-2xl font-bold text-center mb-12">The Complete Studio Experience</h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/Packaging.jpeg" 
-                alt="Premium Packaging" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-              <div className="absolute bottom-4 left-4 text-white">
+            <div className="group relative rounded-3xl overflow-hidden shadow-lg bg-white">
+              <div className="aspect-[4/5] relative">
+                <img 
+                  src="/images/Packaging.jpeg" 
+                  alt="Premium Packaging" 
+                  className="w-full h-full object-contain p-4" 
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 backdrop-blur-sm">
                 <p className="font-bold text-lg">Unboxing Magic</p>
                 <p className="text-sm opacity-90">Premium sustainable packaging</p>
               </div>
             </div>
-            <div className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/EcoSystem.jpeg" 
-                alt="Full Ecosystem" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-              <div className="absolute bottom-4 left-4 text-white">
+            <div className="group relative rounded-3xl overflow-hidden shadow-lg bg-white">
+              <div className="aspect-[4/5] relative">
+                <img 
+                  src="/images/EcoSystem.jpeg" 
+                  alt="Full Ecosystem" 
+                  className="w-full h-full object-contain p-4" 
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 backdrop-blur-sm">
                 <p className="font-bold text-lg">Connected Play</p>
                 <p className="text-sm opacity-90">App + Printer + Dolls</p>
               </div>
             </div>
-            <div className="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/MockPrinter.jpeg" 
-                alt="Studio Setup" 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-              <div className="absolute bottom-4 left-4 text-white">
+            <div className="group relative rounded-3xl overflow-hidden shadow-lg bg-white">
+              <div className="aspect-[4/5] relative">
+                <img 
+                  src="/images/MockPrinter.jpeg" 
+                  alt="Studio Setup" 
+                  className="w-full h-full object-contain p-4" 
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-4 backdrop-blur-sm">
                 <p className="font-bold text-lg">Design Station</p>
                 <p className="text-sm opacity-90">Fits perfectly on any desk</p>
               </div>
