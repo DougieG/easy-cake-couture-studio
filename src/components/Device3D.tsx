@@ -76,7 +76,6 @@ function PrinterModel(props: any) {
         color="#ec4899"
         anchorX="center"
         anchorY="middle"
-        font="/fonts/Quicksand-Bold.ttf" // Fallback to default if not found
       >
         Easy Cake
       </Text>
