@@ -40,17 +40,20 @@ The dress should have the same silhouette, color scheme, and decorative details 
 Make it look like a real luxurious fabric dress with the same rainbow/colorful pattern if present.
 Professional fashion photography, soft studio lighting, clean white background, magazine quality.`
 
-    // Use Flux 1.1 Pro for better sketch-to-image
+    // Use stability-ai SDXL for reliable img2img
     const prediction = await replicate.predictions.create({
-      model: "black-forest-labs/flux-1.1-pro",
+      model: "stability-ai/sdxl",
       input: {
         prompt: prompt,
         image: imageDataUri,
-        prompt_upsampling: true,
-        output_format: "webp",
-        output_quality: 90,
-        safety_tolerance: 2,
-        aspect_ratio: "3:4",
+        num_outputs: 1,
+        scheduler: "K_EULER",
+        num_inference_steps: 30,
+        guidance_scale: 7.5,
+        prompt_strength: 0.6,
+        negative_prompt: "ugly, blurry, low quality, distorted, sketch lines visible, crayon texture, childish, amateur",
+        refine: "expert_ensemble_refiner",
+        high_noise_frac: 0.8,
       }
     })
 
